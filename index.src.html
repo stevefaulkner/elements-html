@@ -76,13 +76,13 @@ p.note, div.note {
 
   <section><h4 id="the-html-element">The <dfn><code>html</code></dfn> element</h4>
 
-  <dl class="element"><dt><a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#concept-element-categories" id="the-html-element:concept-element-categories">Categories</a>:</dt><dd>None.</dd><dt><a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#concept-element-contexts" id="the-html-element:concept-element-contexts">Contexts in which this element can be used</a>:</dt><dd>As the root element of a document.</dd><dd>Wherever a subdocument fragment is allowed in a compound document.</dd><dt><a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#concept-element-content-model" id="the-html-element:concept-element-content-model">Content model</a>:</dt><dd>A <code id="the-html-element:the-head-element"><a href="#the-head-element">head</a></code> element followed by a <code id="the-html-element:the-body-element"><a href="#the-body-element">body</a></code> element.</dd><dt><a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#concept-element-tag-omission" id="the-html-element:concept-element-tag-omission">Tag omission in text/html</a>:</dt><dd>An <code id="the-html-element:the-html-element"><a href="#the-html-element">html</a></code> element's <a href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#syntax-start-tag" id="the-html-element:syntax-start-tag">start tag</a> can be omitted
+  <details><summary><code>html</code> element - quick reference</summary><dl class="element"><dt><a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#concept-element-categories" id="the-html-element:concept-element-categories">Categories</a>:</dt><dd>None.</dd><dt><a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#concept-element-contexts" id="the-html-element:concept-element-contexts">Contexts in which this element can be used</a>:</dt><dd>As the root element of a document.</dd><dd>Wherever a subdocument fragment is allowed in a compound document.</dd><dt><a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#concept-element-content-model" id="the-html-element:concept-element-content-model">Content model</a>:</dt><dd>A <code id="the-html-element:the-head-element"><a href="#the-head-element">head</a></code> element followed by a <code id="the-html-element:the-body-element"><a href="#the-body-element">body</a></code> element.</dd><dt><a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#concept-element-tag-omission" id="the-html-element:concept-element-tag-omission">Tag omission in text/html</a>:</dt><dd>An <code id="the-html-element:the-html-element"><a href="#the-html-element">html</a></code> element's <a href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#syntax-start-tag" id="the-html-element:syntax-start-tag">start tag</a> can be omitted
    if the first thing inside the <code id="the-html-element:the-html-element-2"><a href="#the-html-element">html</a></code> element is not a <a href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#syntax-comments" id="the-html-element:syntax-comments">comment</a>.</dd><dd>An <code id="the-html-element:the-html-element-3"><a href="#the-html-element">html</a></code> element's <a href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#syntax-end-tag" id="the-html-element:syntax-end-tag">end tag</a> can be omitted if
    the <code id="the-html-element:the-html-element-4"><a href="#the-html-element">html</a></code> element is not immediately followed by a <a href="http://www.w3.org/html/wg/drafts/html/master/syntax.html#syntax-comments" id="the-html-element:syntax-comments-2">comment</a>.</dd><dt><a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#concept-element-attributes" id="the-html-element:concept-element-attributes">Content attributes</a>:</dt><dd><a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#global-attributes" id="the-html-element:global-attributes">Global attributes</a></dd><dd><code id="the-html-element:attr-html-manifest"><a href="#attr-html-manifest">manifest</a></code> — <a href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#concept-appcache-manifest" id="the-html-element:concept-appcache-manifest">Application cache manifest</a></dd><dt>Allowed <a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#aria-role-attribute">ARIA role attribute</a> values:</dt><dd>None</dd><dt>Allowed <a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#state-and-property-attributes">ARIA State and Property Attributes</a>:</dt><dd><a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#index-aria-global">Global aria-* attributes</a></dd><dt><a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#concept-element-dom" id="the-html-element:concept-element-dom">DOM interface</a>:</dt><dd>
     <pre class="idl">interface <dfn id="htmlhtmlelement">HTMLHtmlElement</dfn> : <a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#htmlelement" id="the-html-element:htmlelement">HTMLElement</a> {
   // <a href="http://www.w3.org/html/wg/drafts/html/master/obsolete.html#HTMLHtmlElement-partial">also has obsolete members</a>
 };</pre>
-   </dd></dl>
+   </dd></dl></details>
 
   <p>The <code id="the-html-element:the-html-element-5"><a href="#the-html-element">html</a></code> element <a href="http://www.w3.org/html/wg/drafts/html/master/dom.html#represents" id="the-html-element:represents">represents</a> the root of an HTML document.</p>
 
@@ -11183,7 +11183,7 @@ the time Marco had stuck his tongue out...&lt;/p&gt;</pre>
   
 </section>
 <section>
-  <h6 id="images-of-pictures">.14 Images of Pictures</h6>
+  <h6 id="images-of-pictures">Images of Pictures</h6>
 
   <p>Images of pictures or graphics include visual representations of objects, people, scenes, abstractions, etc.  
   This <a href="http://www.w3.org/TR/WCAG20/#non-text-contentdef">non-text content</a>, <a href="references.html#refsWCAG">[WCAG]</a> can convey a significant amount of 
@@ -11227,7 +11227,7 @@ the time Marco had stuck his tongue out...&lt;/p&gt;</pre>
   </div>
 </section>   
 <section>
-  <h6 id="webcam-images">.15 Webcam images</h6>
+  <h6 id="webcam-images">Webcam images</h6>
 
   <p>Webcam images are static images that are automatically updated periodically. Typically the images are
   from a fixed viewpoint, the images may update on the page automatically as each new image is uploaded from
@@ -11265,7 +11265,7 @@ the time Marco had stuck his tongue out...&lt;/p&gt;</pre>
   </div>
 </section>
 <section>
-  <h6 id="when-a-text-alternative-is-not-available-at-the-time-of-publication">.16 When a text alternative is not available at the time of publication</h6>
+  <h6 id="when-a-text-alternative-is-not-available-at-the-time-of-publication">When a text alternative is not available at the time of publication</h6>
 
   <p>In some cases an image is included in a published document, but the author is unable to provide an appropriate text alternative. 
   In such cases the minimum requirement is to provide a caption for the image using the <code><a href="#the-figure-element">figure</a></code> and <code><a href="#the-figcaption-element">figcaption</a></code> 
@@ -11352,7 +11352,7 @@ the time Marco had stuck his tongue out...&lt;/p&gt;</pre>
   alternative is available and none can be made available, as in the above examples.</p>
 </section>  
 <section>
-  <h6 id="an-image-not-intended-for-the-user">.17 An image not intended for the user</h6>
+  <h6 id="an-image-not-intended-for-the-user">An image not intended for the user</h6>
 
   <p class="auth">Generally authors should avoid using <code><a href="#the-img-element">img</a></code> elements
   for purposes other than showing images.</p>
@@ -11384,7 +11384,7 @@ the time Marco had stuck his tongue out...&lt;/p&gt;</pre>
   
 </section>
 <section>
-  <h6 id="icon-images">.18 Icon Images</h6>
+  <h6 id="icon-images">Icon Images</h6>
 
   <p>An icon is usually a simple picture representing a program, action, data file or a concept. 
   Icons are intended to help users of visual browsers to recognize features at a glance.</p>
@@ -11437,7 +11437,7 @@ the time Marco had stuck his tongue out...&lt;/p&gt;</pre>
  </div>
 </section>
 <section>
-  <h6 id="logos,-insignia,-flags,-or-emblems">.19 Logos, insignia, flags, or emblems</h6>
+  <h6 id="logos,-insignia,-flags,-or-emblems">Logos, insignia, flags, or emblems</h6>
   <p>Many pages include logos, insignia, flags, or emblems, which stand for a company, organization, project, 
   band, software package, country, or other entity. What can be considered as an appropriate text alternative depends upon, 
   like all images, the context in which the image is being used and what function it serves in the given context.</p>
@@ -11492,7 +11492,7 @@ the time Marco had stuck his tongue out...&lt;/p&gt;</pre>
   </div>
 </section>  
 <section>
-  <h6 id="captcha-images">.20 CAPTCHA Images</h6>
+  <h6 id="captcha-images">CAPTCHA Images</h6>
   <p>CAPTCHA stands for "Completely Automated Public Turing test to tell Computers and Humans Apart".
   CAPTCHA images are used for security purposes to confirm that content is being accessed by a person
   rather than a computer. This authentication is done through visual verification of an image. CAPTCHA 
@@ -11520,7 +11520,7 @@ the time Marco had stuck his tongue out...&lt;/p&gt;</pre>
   </div>
 </section>  
 <section>
-  <h6 id="an-image-in-a-picture-element">.21 An image in a <code><a href="#the-picture-element">picture</a></code> element</h6>
+  <h6 id="an-image-in-a-picture-element">An image in a <code><a href="#the-picture-element">picture</a></code> element</h6>
   <p>The <code><a href="#the-picture-element">picture</a></code> element and any <code><a href="#the-source-element">source</a></code> elements it contains have no semantics for users, 
   only the <code><a href="#the-img-element">img</a></code> element or its text alternative is displayed to users. Provide a text alternative for an 
   <code><a href="#the-img-element">img</a></code> element without regard to it being within a <code><a href="#the-picture-element">picture</a></code> element. Refer to 
@@ -11548,7 +11548,7 @@ or the appropriateness of the <code>alt</code> text.</p>
 
 </section>
 <section>
-  <h6 id="guidance-for-markup-generators">.22 Guidance for markup generators</h6>
+  <h6 id="guidance-for-markup-generators">Guidance for markup generators</h6>
 
   <p>Markup generators (such as WYSIWYG authoring tools) should,
   wherever possible, obtain a text alternative from their
@@ -11599,7 +11599,7 @@ or the appropriateness of the <code>alt</code> text.</p>
   generator did when generating the page.</p>
 </section>
 <section>
-  <h6 id="guidance-for-conformance-checkers">.23 Guidance for conformance checkers</h6>
+  <h6 id="guidance-for-conformance-checkers">Guidance for conformance checkers</h6>
 
   <p>A conformance checker must report the lack of an <code><a href="#attr-img-alt">alt</a></code> attribute as an error unless one of
   the conditions listed below applies:</p>
@@ -26986,7 +26986,7 @@ ldh-str       = &lt; as defined in <a href="http://tools.ietf.org/html/rfc1034#s
 
 
 
-  <section><h6 id="color-state-(type=color)">.14 <dfn>Colour</dfn> state (<code>type=color</code>)</h6>
+  <section><h6 id="color-state-(type=color)"><dfn>Colour</dfn> state (<code>type=color</code>)</h6>
 
   
 
@@ -27089,7 +27089,7 @@ ldh-str       = &lt; as defined in <a href="http://tools.ietf.org/html/rfc1034#s
   </div></section>
 
 
-  <section><h6 id="checkbox-state-(type=checkbox)">.15 <dfn>Checkbox</dfn> state (<code>type=checkbox</code>)</h6>
+  <section><h6 id="checkbox-state-(type=checkbox)"><dfn>Checkbox</dfn> state (<code>type=checkbox</code>)</h6>
 
   
 
@@ -27193,7 +27193,7 @@ ldh-str       = &lt; as defined in <a href="http://tools.ietf.org/html/rfc1034#s
 
 
 
-  <section><h6 id="radio-button-state-(type=radio)">.16 <dfn>Radio Button</dfn> state (<code>type=radio</code>)</h6>
+  <section><h6 id="radio-button-state-(type=radio)"><dfn>Radio Button</dfn> state (<code>type=radio</code>)</h6>
 
   
 
@@ -27319,7 +27319,7 @@ ldh-str       = &lt; as defined in <a href="http://tools.ietf.org/html/rfc1034#s
 
 
 
-  <section><h6 id="file-upload-state-(type=file)">.17 <dfn>File Upload</dfn> state (<code>type=file</code>)</h6>
+  <section><h6 id="file-upload-state-(type=file)"><dfn>File Upload</dfn> state (<code>type=file</code>)</h6>
 
   
 
@@ -27535,7 +27535,7 @@ ldh-str       = &lt; as defined in <a href="http://tools.ietf.org/html/rfc1034#s
 
 
 
-  <section><h6 id="submit-button-state-(type=submit)">.18 <dfn>Submit Button</dfn> state (<code>type=submit</code>)</h6>
+  <section><h6 id="submit-button-state-(type=submit)"><dfn>Submit Button</dfn> state (<code>type=submit</code>)</h6>
 
   
 
@@ -27635,7 +27635,7 @@ ldh-str       = &lt; as defined in <a href="http://tools.ietf.org/html/rfc1034#s
   </div></section>
 
 
-  <section><h6 id="image-button-state-(type=image)">.19 <dfn>Image Button</dfn> state (<code>type=image</code>)</h6>
+  <section><h6 id="image-button-state-(type=image)"><dfn>Image Button</dfn> state (<code>type=image</code>)</h6>
 
   
 
@@ -27858,7 +27858,7 @@ ldh-str       = &lt; as defined in <a href="http://tools.ietf.org/html/rfc1034#s
 
 
 
-  <section><h6 id="reset-button-state-(type=reset)">.20 <dfn>Reset Button</dfn> state (<code>type=reset</code>)</h6>
+  <section><h6 id="reset-button-state-(type=reset)"><dfn>Reset Button</dfn> state (<code>type=reset</code>)</h6>
 
   
 
@@ -27950,7 +27950,7 @@ ldh-str       = &lt; as defined in <a href="http://tools.ietf.org/html/rfc1034#s
   </div></section>
 
 
-  <section><h6 id="button-state-(type=button)">.21 <dfn>Button</dfn> state (<code>type=button</code>)</h6>
+  <section><h6 id="button-state-(type=button)"><dfn>Button</dfn> state (<code>type=button</code>)</h6>
 
   
 
