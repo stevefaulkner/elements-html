@@ -21,6 +21,24 @@
       };
     </script>
      <style>
+	 .represents::before {
+    content: "Semantics? ";
+    font-style: italic;
+    font-weight: bold;
+    margin-left: -110px;
+    padding-right: 10px;
+}
+.represents {
+    background-color: #CFC;
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px #888;
+    margin-bottom: 0;
+    margin-right: 15%;
+    margin-top: 8px;
+    padding-bottom: 1px;
+    padding-left: 12px;
+    padding-top: 12px;
+}
 	.note-title {padding-left:1.5em}
 	
 tr:nth-child(2n+1) {
@@ -10331,7 +10349,7 @@ interface <dfn id="htmlimageelement">HTMLImageElement</dfn> : <a href="http://ww
     <p>The image is either decorative or supplemental to the rest of the content, redundant with
     some other information in the document.</p>
 
-    <p>If the image is <a href="#img-available" id="the-img-element:img-available-2">available</a> and the user agent is configured
+    <p class="represents">If the image is <a href="#img-available" id="the-img-element:img-available-2">available</a> and the user agent is configured
     to display that image, then the element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-img-element:represents">represents</a> the element's image data.</p>
 
     <p>Otherwise, the element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-img-element:represents-2">represents</a> nothing, and may be omitted completely from
@@ -10374,7 +10392,7 @@ interface <dfn id="htmlimageelement">HTMLImageElement</dfn> : <a href="http://ww
 
    </dd><dt>If the <code id="the-img-element:attr-img-src-16"><a href="#attr-img-src">src</a></code> attribute is not set and either the <code id="the-img-element:attr-img-alt-10"><a href="#attr-img-alt">alt</a></code> attribute is set to the empty string or the <code id="the-img-element:attr-img-alt-11"><a href="#attr-img-alt">alt</a></code> attribute is not set at all</dt><dd>
 
-    <p>The element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-img-element:represents-6">represents</a> nothing.</p>
+    <p class="represents">The element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-img-element:represents-6">represents</a> nothing.</p>
 
    </dd><dt>Otherwise</dt><dd>
 
@@ -12835,7 +12853,7 @@ attribute, set the <a href="http://www.w3.org/TR/html51/browsers.html#browsing-c
         named <code id="the-object-element:event-load"><a href="index.html#event-load">load</a></code> at the <code id="the-object-element:the-object-element-16"><a href="#the-object-element">object</a></code> element. <span class="note">No <code id="the-object-element:event-load-2"><a href="index.html#event-load">load</a></code> event is fired at the
         <code id="the-object-element:about:blank-3"><a href="http://www.w3.org/TR/html51/infrastructure.html#about:blank">about:blank</a></code> document itself.</span></p>
 
-        <p>The <code id="the-object-element:the-object-element-17"><a href="#the-object-element">object</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-object-element:represents">represents</a> the <a href="http://www.w3.org/TR/html51/browsers.html#nested-browsing-context" id="the-object-element:nested-browsing-context-6">nested browsing
+        <p class="represents">The <code id="the-object-element:the-object-element-17"><a href="#the-object-element">object</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-object-element:represents">represents</a> the <a href="http://www.w3.org/TR/html51/browsers.html#nested-browsing-context" id="the-object-element:nested-browsing-context-6">nested browsing
         context</a>.</p>
 
         <p>If the <code id="the-object-element:attr-object-name-2"><a href="#attr-object-name">name</a></code> attribute is present, the
@@ -13209,7 +13227,7 @@ attribute, set the <a href="http://www.w3.org/TR/html51/browsers.html#browsing-c
   <p class="note">Which frame in a video stream corresponds to a particular playback position is
   defined by the video stream's format.</p>
 
-  <p>The <code id="the-video-element:the-video-element-20"><a href="#the-video-element">video</a></code> element also <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-video-element:represents-6">represents</a> any <a href="#text-track-cue" id="the-video-element:text-track-cue">text track cues</a> whose <a href="#text-track-cue-active-flag" id="the-video-element:text-track-cue-active-flag">text track cue active flag</a> is set and whose
+  <p class="represents">The <code id="the-video-element:the-video-element-20"><a href="#the-video-element">video</a></code> element also <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-video-element:represents-6">represents</a> any <a href="#text-track-cue" id="the-video-element:text-track-cue">text track cues</a> whose <a href="#text-track-cue-active-flag" id="the-video-element:text-track-cue-active-flag">text track cue active flag</a> is set and whose
   <a href="#text-track" id="the-video-element:text-track">text track</a> is in the <a href="#text-track-showing" id="the-video-element:text-track-showing">showing</a> mode, and any
   audio from the <a href="#media-resource" id="the-video-element:media-resource-6">media resource</a>, at the <a href="#current-playback-position" id="the-video-element:current-playback-position-7">current playback position</a>.</p>
 
