@@ -33,7 +33,7 @@
     border-radius: 8px;
     box-shadow: 4px 4px 4px #888;
     margin-bottom: 0;
-    margin-right: 15%;
+    /*margin-right: 15%;*/
     margin-top: 8px;
     padding-bottom: 1px;
     padding-left: 12px;
@@ -56,6 +56,7 @@ summary:hover, summary:focus, details[open] summary:hover, details[open] summary
 details, summary {
     display: block;
 }
+details {border:2px solid #CFC;}
 
 p.note::before {
     content: "Note: ";
@@ -239,16 +240,6 @@ gave me some of the songs they wrote. I love sharing my music.&lt;/p&gt;
 
    </dd></dl>
 
-  
-
-  <p>The IDL attribute <dfn id="dom-title-text"><code>text</code></dfn> must return a
-  concatenation of the contents of all the <code id="the-title-element:text-2"><a href="http://www.w3.org/TR/html51/infrastructure.html#text">Text</a></code> nodes that are children of the
-  <code id="the-title-element:the-title-element-5"><a href="#the-title-element">title</a></code> element (ignoring any other nodes such as comments or elements), in <a href="http://www.w3.org/TR/html51/infrastructure.html#tree-order" id="the-title-element:tree-order">tree order</a>.
-  On setting, it must act the same way as the <code id="the-title-element:textcontent"><a href="http://www.w3.org/TR/html51/infrastructure.html#textcontent">textContent</a></code> IDL attribute.</p>
-
-  
-
-
   <div class="example">
 
    <p>Here are some examples of appropriate titles, contrasted with the top-level headings that
@@ -270,15 +261,18 @@ gave me some of the songs they wrote. I love sharing my music.&lt;/p&gt;
 
   </div>
 
+  <details><summary>Implementation Details:</summary>
+  <p>The IDL attribute <dfn id="dom-title-text"><code>text</code></dfn> must return a
+  concatenation of the contents of all the <code id="the-title-element:text-2"><a href="http://www.w3.org/TR/html51/infrastructure.html#text">Text</a></code> nodes that are children of the
+  <code id="the-title-element:the-title-element-5"><a href="#the-title-element">title</a></code> element (ignoring any other nodes such as comments or elements), in <a href="http://www.w3.org/TR/html51/infrastructure.html#tree-order" id="the-title-element:tree-order">tree order</a>.
+  On setting, it must act the same way as the <code id="the-title-element:textcontent"><a href="http://www.w3.org/TR/html51/infrastructure.html#textcontent">textContent</a></code> IDL attribute.</p>
   <p>The string to use as the document's title is given by the <code id="the-title-element:document.title"><a href="http://www.w3.org/TR/html51/dom.html#document.title">document.title</a></code> IDL attribute.</p>
 
-  
-
+ 
   <p>User agents should use the document's title when referring to the document in their user
   interface. When the contents of a <code id="the-title-element:the-title-element-6"><a href="#the-title-element">title</a></code> element are used in this way, <a href="http://www.w3.org/TR/html51/dom.html#the-directionality" id="the-title-element:the-directionality">the
-  directionality</a> of that <code id="the-title-element:the-title-element-7"><a href="#the-title-element">title</a></code> element should be used to set the directionality
-  of the document's title in the user interface.</p></section>
-
+  directionality</a> of that <code id="the-title-element:the-title-element-7"><a href="#the-title-element">title</a></code> element should be used to set the directionality of the document's title in the user interface.</p></section>
+</details>
   
 
 
@@ -779,7 +773,7 @@ gave me some of the songs they wrote. I love sharing my music.&lt;/p&gt;
     and with its <code id="standard-metadata-names:attr-meta-name-2"><a href="#attr-meta-name">name</a></code> attribute set to the value <code id="standard-metadata-names:meta-application-name-2"><a href="#meta-application-name">application-name</a></code> per document.</p>
 
     
-
+<details><summary>User Agent Implementation Details</summary>
     <p>User agents may use the application name in UI in preference to the page's
     <code id="standard-metadata-names:the-title-element"><a href="#the-title-element">title</a></code>, since the title might include status messages and the like relevant to the
     status of the page at a particular moment in time instead of just being the name of the
@@ -814,7 +808,7 @@ gave me some of the songs they wrote. I love sharing my music.&lt;/p&gt;
     <p class="note">This algorithm would be used by a browser when it needs a name for the page, for
     instance, to label a bookmark. The languages it would provide to the algorithm would be the
     user's preferred languages.</p>
-
+</details>
     
 
    </dd><dt><dfn id="meta-author"><code>author</code></dfn></dt><dd><p>The value must be a free-form string giving the name of one of the page's
@@ -862,7 +856,7 @@ gave me some of the songs they wrote. I love sharing my music.&lt;/p&gt;
     in a way that is not helpful for users.</p>
 
     
-
+<details><summary>User Agent Implementation Details</summary>
     <p>To obtain the list of keywords that the author has specified as applicable to the page, the
     user agent must run the following steps:</p>
 
@@ -885,14 +879,14 @@ gave me some of the songs they wrote. I love sharing my music.&lt;/p&gt;
     that certain users would try to game its ranking mechanism through the use of inappropriate
     keywords.</p>
 
-    
+    </details>
 
    </dd></dl></section>
 
 
 
   <section><h5 id="other-metadata-names">.5.2 Other metadata names</h5>
-
+<details><summary>Information on how register new metadata names</summary>
   <p><dfn id="concept-meta-extensions">Extensions to the predefined set of metadata names</dfn>
   may be registered in the <a href="https://wiki.whatwg.org/wiki/MetaExtensions">WHATWG Wiki
   MetaExtensions page</a>. <a href="references.html#refsWHATWGWIKI">[WHATWGWIKI]</a></p>
@@ -933,8 +927,11 @@ gave me some of the songs they wrote. I love sharing my music.&lt;/p&gt;
     definitions above.</p>
 
    </dd></dl>
-
+    <p class="note">Metadata names whose values are to be <a href="http://www.w3.org/TR/html51/infrastructure.html#url" id="other-metadata-names:url">URLs</a> must not be proposed or accepted. Links must be represented using the <code id="other-metadata-names:the-link-element"><a href="#the-link-element">link</a></code> element, not the <code id="other-metadata-names:the-meta-element"><a href="#the-meta-element">meta</a></code>
+  element.</p>
+</details>
   
+  <details><summary>Conformance Checker Implementation Details</summary>
 
   <p>Conformance checkers may use the information given on the WHATWG Wiki MetaExtensions page to
   establish if a value is allowed or not: values defined in this specification or marked as
@@ -946,12 +943,8 @@ gave me some of the songs they wrote. I love sharing my music.&lt;/p&gt;
   <p>When an author uses a new metadata name not defined by either this specification or the Wiki
   page, conformance checkers should offer to add the value to the Wiki, with the details described
   above, with the "proposed" status.</p>
-
-  
-
-  <p>Metadata names whose values are to be <a href="http://www.w3.org/TR/html51/infrastructure.html#url" id="other-metadata-names:url">URLs</a> must not be proposed or
-  accepted. Links must be represented using the <code id="other-metadata-names:the-link-element"><a href="#the-link-element">link</a></code> element, not the <code id="other-metadata-names:the-meta-element"><a href="#the-meta-element">meta</a></code>
-  element.</p></section>
+</details>
+  </section>
 
 
 
@@ -993,7 +986,7 @@ gave me some of the songs they wrote. I love sharing my music.&lt;/p&gt;
 
 
 
-  
+ <details><summary>User Agent Implementation Details</summary> 
 
   <p>When a <code id="pragma-directives:the-meta-element-2"><a href="#the-meta-element">meta</a></code> element is <a href="http://www.w3.org/TR/html51/infrastructure.html#insert-an-element-into-a-document" id="pragma-directives:insert-an-element-into-a-document">inserted
   into the document</a>, if its <code id="pragma-directives:attr-meta-http-equiv-2"><a href="#attr-meta-http-equiv">http-equiv</a></code> attribute is
@@ -1200,13 +1193,13 @@ gave me some of the songs they wrote. I love sharing my music.&lt;/p&gt;
     <p>User agents are required to ignore this pragma.</p>
 
    </dd></dl>
-
+</details>
   <p>There must not be more than one <code id="pragma-directives:the-meta-element-16"><a href="#the-meta-element">meta</a></code> element with any particular state in the
   document at a time.</p></section>
 
 
   <section><h5 id="other-pragma-directives">.5.4 Other pragma directives</h5>
-
+<details><summary>Information on how register new pragma directives</summary>
   <p><dfn id="concept-http-equiv-extensions">Extensions to the predefined set of pragma
   directives</dfn> may, under certain conditions, be registered in the <a href="https://wiki.whatwg.org/wiki/PragmaExtensions">WHATWG Wiki PragmaExtensions page</a>. <a href="references.html#refsWHATWGWIKI">[WHATWGWIKI]</a></p>
 
@@ -1226,15 +1219,18 @@ gave me some of the songs they wrote. I love sharing my music.&lt;/p&gt;
 
   <dl><dt>Keyword</dt><dd><p>The actual name being defined. The name must match a previously-registered HTTP name with
    the same requirements.</p></dd><dt>Brief description</dt><dd><p>A short non-normative description of the purpose of the pragma directive.</p></dd><dt>Specification</dt><dd>A link to the specification defining the corresponding HTTP header.</dd></dl>
-
-  
+</details>
+ 
+ <details><summary>Conformance Checker Implementation Details</summary> 
 
   <p>Conformance checkers must use the information given on the WHATWG Wiki PragmaExtensions page to
   establish if a value is allowed or not: values defined in this specification or listed on the
   aforementioned page must be accepted, whereas values not listed in either this specification or on
   the aforementioned page must be rejected as invalid. Conformance checkers may cache this
   information (e.g. for performance reasons or to avoid the use of unreliable network
-  connectivity).</p></section>
+  connectivity).</p>
+  </details>
+  </section>
 
   
 
@@ -1440,7 +1436,7 @@ c-end         = "--&gt;"</pre>
 
   
 
-
+<details><summary>User Agent Implementation Details</summary>
   <p>Whenever one of the following conditions occur for an element whose <code id="the-style-element:document-2"><a href="http://www.w3.org/TR/html51/dom.html#document">Document</a></code> is in
   a <a href="http://www.w3.org/TR/html51/browsers.html#browsing-context" id="the-style-element:browsing-context">browsing context</a>:</p>
 
@@ -1549,14 +1545,16 @@ c-end         = "--&gt;"</pre>
  &lt;/body&gt;
 &lt;/html&gt;</pre>
 
-  </div></section>
+  </div>
+  </details>
+  </section>
 
 
 
   
 
   <section><h4 id="interactions-of-styling-and-scripting">Interactions of styling and scripting</h4>
-
+<details><summary>User Agent Implementation Details</summary>
   <p>Style sheets, whether added by a <code id="interactions-of-styling-and-scripting:the-link-element"><a href="#the-link-element">link</a></code> element, a <code id="interactions-of-styling-and-scripting:the-style-element"><a href="#the-style-element">style</a></code> element, an
   <code id="interactions-of-styling-and-scripting:xml-stylesheet"><a data-x-internal="xml-stylesheet" href="http://www.w3.org/TR/xml-stylesheet/#the-xml-stylesheet-processing-instruction">&lt;?xml-stylesheet?&gt;</a></code> PI, an HTTP <code id="interactions-of-styling-and-scripting:http-link"><a href="http://www.w3.org/TR/html51/infrastructure.html#http-link">Link:</a></code> header, or
   some other mechanism, have a <dfn id="style-sheet-ready">style sheet ready</dfn> flag, which is initially unset.</p>
@@ -1595,7 +1593,8 @@ c-end         = "--&gt;"</pre>
 
   <p>A <code id="interactions-of-styling-and-scripting:document-6"><a href="http://www.w3.org/TR/html51/dom.html#document">Document</a></code> <dfn id="has-no-style-sheet-that-is-blocking-scripts">has no style sheet that is blocking scripts</dfn> if it does not
   <a href="#has-a-style-sheet-that-is-blocking-scripts" id="interactions-of-styling-and-scripting:has-a-style-sheet-that-is-blocking-scripts-2">have a style sheet that is blocking
-  scripts</a> as defined in the previous paragraph.</p></section></section>
+  scripts</a> as defined in the previous paragraph.</p>
+  </details></section></section>
 
   
 
@@ -2244,24 +2243,24 @@ the specification.</p>
    <pre>&lt;body&gt;
  &lt;h1&gt;Let's call it a draw(ing surface)&lt;/h1&gt;
  &lt;section&gt;
-  &lt;h1&gt;Diving in&lt;/h1&gt;
+  &lt;h2&gt;Diving in&lt;/h2&gt;
  &lt;/section&gt;
  &lt;section&gt;
-  &lt;h1&gt;Simple shapes&lt;/h1&gt;
+  &lt;h2&gt;Simple shapes&lt;/h2&gt;
  &lt;/section&gt;
  &lt;section&gt;
-  &lt;h1&gt;Canvas coordinates&lt;/h1&gt;
+  &lt;h2&gt;Canvas coordinates&lt;/h2&gt;
   &lt;section&gt;
-   &lt;h1&gt;Canvas coordinates diagram&lt;/h1&gt;
+   &lt;h3&gt;Canvas coordinates diagram&lt;/h3&gt;
   &lt;/section&gt;
  &lt;/section&gt;
  &lt;section&gt;
-  &lt;h1&gt;Paths&lt;/h1&gt;
+  &lt;h2&gt;Paths&lt;/h2&gt;
  &lt;/section&gt;
 &lt;/body&gt;</pre>
 
    <p>Web developers might prefer the former style for its terseness, or the latter style for its
-   convenience in the face of heavy editing; which is best is purely an issue of preferred authoring
+   convenience in the face of heavy editing; which at best is purely an issue of preferred authoring
    style.</p>
 
    <p>The two styles can be combined, for compatibility with legacy tools while still
@@ -4820,7 +4819,7 @@ included with Exhibit B.
 
   
 
-  <p>If the <code id="the-a-element:the-a-element-2"><a href="#the-a-element">a</a></code> element has no <code id="the-a-element:attr-hyperlink-href-3"><a href="#attr-hyperlink-href">href</a></code> attribute,
+  <p class="represents">If the <code id="the-a-element:the-a-element-2"><a href="#the-a-element">a</a></code> element has no <code id="the-a-element:attr-hyperlink-href-3"><a href="#attr-hyperlink-href">href</a></code> attribute,
   then the element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-a-element:represents-2">represents</a> a placeholder for where a link might otherwise have been
   placed, if it had been relevant, consisting of just the element's contents.</p>
 
@@ -10352,7 +10351,7 @@ interface <dfn id="htmlimageelement">HTMLImageElement</dfn> : <a href="http://ww
     <p class="represents">If the image is <a href="#img-available" id="the-img-element:img-available-2">available</a> and the user agent is configured
     to display that image, then the element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-img-element:represents">represents</a> the element's image data.</p>
 
-    <p>Otherwise, the element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-img-element:represents-2">represents</a> nothing, and may be omitted completely from
+    <p class="represents">Otherwise, the element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-img-element:represents-2">represents</a> nothing, and may be omitted completely from
     the rendering. User agents may provide the user with a notification that an image is present but
     has been omitted from the rendering.</p>
 
@@ -13389,7 +13388,7 @@ zero or more <code id="the-audio-element:the-track-element"><a href="#the-track-
 interface <dfn id="htmlaudioelement">HTMLAudioElement</dfn> : <a href="#htmlmediaelement" id="the-audio-element:htmlmediaelement">HTMLMediaElement</a> {};</pre>
    </dd></dl>
 </details>
-  <p>An <code id="the-audio-element:the-audio-element"><a href="#the-audio-element">audio</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-audio-element:represents">represents</a> a sound or audio stream.</p>
+  <p class="represents">An <code id="the-audio-element:the-audio-element"><a href="#the-audio-element">audio</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-audio-element:represents">represents</a> a sound or audio stream.</p>
 
   
 
@@ -18934,7 +18933,7 @@ dictionary <dfn id="trackeventinit">TrackEventInit</dfn> : <a href="http://www.w
 };</pre>
    </dd></dl>
 </details>
-  <p>The <code id="the-map-element:the-map-element"><a href="#the-map-element">map</a></code> element, in conjunction with an <code id="the-map-element:the-img-element"><a href="#the-img-element">img</a></code> element and any
+  <p class="represents">The <code id="the-map-element:the-map-element"><a href="#the-map-element">map</a></code> element, in conjunction with an <code id="the-map-element:the-img-element"><a href="#the-img-element">img</a></code> element and any
   <code id="the-map-element:the-area-element"><a href="#the-area-element">area</a></code> element descendants, defines an <a href="#image-map" id="the-map-element:image-map-2">image map</a>. The element
   <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-map-element:represents">represents</a> its children.</p>
 
@@ -19027,7 +19026,7 @@ dictionary <dfn id="trackeventinit">TrackEventInit</dfn> : <a href="http://www.w
 <a href="#htmlareaelement" id="the-area-element:htmlareaelement">HTMLAreaElement</a> implements <a href="http://www.w3.org/TR/html51/infrastructure.html#urlutils" id="the-area-element:urlutils">URLUtils</a>;</pre>
    </dd></dl>
 </details>
-  <p>The <code id="the-area-element:the-area-element"><a href="#the-area-element">area</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-area-element:represents">represents</a> either a hyperlink with some text and a
+  <p class="represents">The <code id="the-area-element:the-area-element"><a href="#the-area-element">area</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-area-element:represents">represents</a> either a hyperlink with some text and a
   corresponding area on an <a href="#image-map" id="the-area-element:image-map-3">image map</a>, or a dead area on an image map.</p>
 
   <p>An <code id="the-area-element:the-area-element-2"><a href="#the-area-element">area</a></code> element with a parent node must have a <code id="the-area-element:the-map-element-2"><a href="#the-map-element">map</a></code> element ancestor
@@ -19600,7 +19599,7 @@ dictionary <dfn id="trackeventinit">TrackEventInit</dfn> : <a href="http://www.w
 };</pre>
    </dd></dl>
 </details>
-  <p>The <code id="the-table-element:the-table-element"><a href="#the-table-element">table</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-table-element:represents">represents</a> data with more than one dimension, in
+  <p class="represents">The <code id="the-table-element:the-table-element"><a href="#the-table-element">table</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-table-element:represents">represents</a> data with more than one dimension, in
   the form of a <a href="#concept-table" id="the-table-element:concept-table">table</a>.</p>
 
   <p>The <code id="the-table-element:the-table-element-2"><a href="#the-table-element">table</a></code> element takes part in the <a href="#table-model" id="the-table-element:table-model">table
@@ -20143,7 +20142,7 @@ side in the right column.&lt;/p&gt;</strong>
 };</pre>
    </dd></dl>
 </details>
-  <p>The <code id="the-caption-element:the-caption-element-3"><a href="#the-caption-element">caption</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-caption-element:represents">represents</a> the title of the <code id="the-caption-element:the-table-element-3"><a href="#the-table-element">table</a></code>
+  <p class="represents">The <code id="the-caption-element:the-caption-element-3"><a href="#the-caption-element">caption</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-caption-element:represents">represents</a> the title of the <code id="the-caption-element:the-table-element-3"><a href="#the-table-element">table</a></code>
   that is its parent, if it has a parent and that is a <code id="the-caption-element:the-table-element-4"><a href="#the-table-element">table</a></code> element.</p>
 
   
@@ -20223,7 +20222,7 @@ the cell that corresponds to the values of the two dice.
 };</pre>
    </dd></dl>
 </details>
-  <p>The <code id="the-colgroup-element:the-colgroup-element-6"><a href="#the-colgroup-element">colgroup</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-colgroup-element:represents">represents</a> a <a href="#concept-column-group" id="the-colgroup-element:concept-column-group">group</a> of one or more <a href="#concept-column" id="the-colgroup-element:concept-column">columns</a> in the <code id="the-colgroup-element:the-table-element-2"><a href="#the-table-element">table</a></code> that is its parent, if it has a
+  <p class="represents">The <code id="the-colgroup-element:the-colgroup-element-6"><a href="#the-colgroup-element">colgroup</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-colgroup-element:represents">represents</a> a <a href="#concept-column-group" id="the-colgroup-element:concept-column-group">group</a> of one or more <a href="#concept-column" id="the-colgroup-element:concept-column">columns</a> in the <code id="the-colgroup-element:the-table-element-2"><a href="#the-table-element">table</a></code> that is its parent, if it has a
   parent and that is a <code id="the-colgroup-element:the-table-element-3"><a href="#the-table-element">table</a></code> element.</p>
 
   <p>If the <code id="the-colgroup-element:the-colgroup-element-7"><a href="#the-colgroup-element">colgroup</a></code> element contains no <code id="the-colgroup-element:the-col-element-3"><a href="#the-col-element">col</a></code> elements, then the element
@@ -20295,7 +20294,7 @@ the cell that corresponds to the values of the two dice.
     used for <code id="the-tbody-element:the-thead-element-3"><a href="#the-thead-element">thead</a></code> and <code id="the-tbody-element:the-tfoot-element-3"><a href="#the-tfoot-element">tfoot</a></code> elements.</p>
    </dd></dl>
 </details>
-  <p>The <code id="the-tbody-element:the-tbody-element-7"><a href="#the-tbody-element">tbody</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-tbody-element:represents">represents</a> a <a href="#concept-row-group" id="the-tbody-element:concept-row-group">block</a> of <a href="#concept-row" id="the-tbody-element:concept-row">rows</a> that consist of a
+  <p class="represents">The <code id="the-tbody-element:the-tbody-element-7"><a href="#the-tbody-element">tbody</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-tbody-element:represents">represents</a> a <a href="#concept-row-group" id="the-tbody-element:concept-row-group">block</a> of <a href="#concept-row" id="the-tbody-element:concept-row">rows</a> that consist of a
   body of data for the parent <code id="the-tbody-element:the-table-element-3"><a href="#the-table-element">table</a></code> element, if the <code id="the-tbody-element:the-tbody-element-8"><a href="#the-tbody-element">tbody</a></code> element has a
   parent and it is a <code id="the-tbody-element:the-table-element-4"><a href="#the-table-element">table</a></code>.</p>
 
@@ -20378,7 +20377,7 @@ the cell that corresponds to the values of the two dice.
     <a href="http://www.w3.org/TR/html51/dom.html#allowed-aria-roles,-states-and-properties">applicable to the allowed roles</a>.</dd><dt><a href="http://www.w3.org/TR/html51/dom.html#concept-element-dom" id="the-thead-element:concept-element-dom">DOM interface</a>:</dt><dd><code id="the-thead-element:htmltablesectionelement"><a href="#htmltablesectionelement">HTMLTableSectionElement</a></code>, as defined for
    <code id="the-thead-element:the-tbody-element-3"><a href="#the-tbody-element">tbody</a></code> elements.</dd></dl>
 </details>
-  <p>The <code id="the-thead-element:the-thead-element-4"><a href="#the-thead-element">thead</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-thead-element:represents">represents</a> the <a href="#concept-row-group" id="the-thead-element:concept-row-group">block</a> of <a href="#concept-row" id="the-thead-element:concept-row">rows</a> that consist of
+  <p class="represents">The <code id="the-thead-element:the-thead-element-4"><a href="#the-thead-element">thead</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-thead-element:represents">represents</a> the <a href="#concept-row-group" id="the-thead-element:concept-row-group">block</a> of <a href="#concept-row" id="the-thead-element:concept-row">rows</a> that consist of
   the column labels (headers) for the parent <code id="the-thead-element:the-table-element-3"><a href="#the-table-element">table</a></code> element, if the <code id="the-thead-element:the-thead-element-5"><a href="#the-thead-element">thead</a></code>
   element has a parent and it is a <code id="the-thead-element:the-table-element-4"><a href="#the-table-element">table</a></code>.</p>
 
@@ -20442,7 +20441,7 @@ the cell that corresponds to the values of the two dice.
     <a href="http://www.w3.org/TR/html51/dom.html#allowed-aria-roles,-states-and-properties">applicable to the allowed roles</a>.</dd><dt><a href="http://www.w3.org/TR/html51/dom.html#concept-element-dom" id="the-tfoot-element:concept-element-dom">DOM interface</a>:</dt><dd><code id="the-tfoot-element:htmltablesectionelement"><a href="#htmltablesectionelement">HTMLTableSectionElement</a></code>, as defined for
    <code id="the-tfoot-element:the-tbody-element-4"><a href="#the-tbody-element">tbody</a></code> elements.</dd></dl>
 </details>
-  <p>The <code id="the-tfoot-element:the-tfoot-element-5"><a href="#the-tfoot-element">tfoot</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-tfoot-element:represents">represents</a> the <a href="#concept-row-group" id="the-tfoot-element:concept-row-group">block</a> of <a href="#concept-row" id="the-tfoot-element:concept-row">rows</a> that consist of
+  <p class="represents">The <code id="the-tfoot-element:the-tfoot-element-5"><a href="#the-tfoot-element">tfoot</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-tfoot-element:represents">represents</a> the <a href="#concept-row-group" id="the-tfoot-element:concept-row-group">block</a> of <a href="#concept-row" id="the-tfoot-element:concept-row">rows</a> that consist of
   the column summaries (footers) for the parent <code id="the-tfoot-element:the-table-element-5"><a href="#the-table-element">table</a></code> element, if the
   <code id="the-tfoot-element:the-tfoot-element-6"><a href="#the-tfoot-element">tfoot</a></code> element has a parent and it is a <code id="the-tfoot-element:the-table-element-6"><a href="#the-table-element">table</a></code>.</p>
 
@@ -20474,7 +20473,7 @@ the cell that corresponds to the values of the two dice.
 };</pre>
    </dd></dl>
 </details>
-  <p>The <code id="the-tr-element:the-tr-element-4"><a href="#the-tr-element">tr</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-tr-element:represents">represents</a> a <a href="#concept-row" id="the-tr-element:concept-row">row</a> of
+  <p class="represents">The <code id="the-tr-element:the-tr-element-4"><a href="#the-tr-element">tr</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-tr-element:represents">represents</a> a <a href="#concept-row" id="the-tr-element:concept-row">row</a> of
   <a href="#concept-cell" id="the-tr-element:concept-cell">cells</a> in a <a href="#concept-table" id="the-tr-element:concept-table">table</a>.</p>
 
   
@@ -20581,7 +20580,7 @@ the cell that corresponds to the values of the two dice.
 };</pre>
    </dd></dl>
 </details>
-  <p>The <code id="the-td-element:the-td-element-4"><a href="#the-td-element">td</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-td-element:represents">represents</a> a data <a href="#concept-cell" id="the-td-element:concept-cell">cell</a> in a table.</p>
+  <p class="represents">The <code id="the-td-element:the-td-element-4"><a href="#the-td-element">td</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-td-element:represents">represents</a> a data <a href="#concept-cell" id="the-td-element:concept-cell">cell</a> in a table.</p>
 
   
 
@@ -20653,7 +20652,7 @@ the cell that corresponds to the values of the two dice.
 };</pre>
    </dd></dl>
 </details>
-  <p>The <code id="the-th-element:the-th-element-6"><a href="#the-th-element">th</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-th-element:represents">represents</a> a header <a href="#concept-cell" id="the-th-element:concept-cell">cell</a> in a table.</p>
+  <p class="represents">The <code id="the-th-element:the-th-element-6"><a href="#the-th-element">th</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-th-element:represents">represents</a> a header <a href="#concept-cell" id="the-th-element:concept-cell">cell</a> in a table.</p>
 
   <p>The <code id="the-th-element:the-th-element-7"><a href="#the-th-element">th</a></code> element may have a <dfn id="attr-th-scope"><code>scope</code></dfn>
   content attribute specified. The <code id="the-th-element:attr-th-scope-2"><a href="#attr-th-scope">scope</a></code> attribute is an
@@ -23219,7 +23218,7 @@ interface <dfn id="htmlformelement">HTMLFormElement</dfn> : <a href="http://www.
 };</pre>
    </dd></dl>
 </details>
-  <p>The <code id="the-form-element:the-form-element-2"><a href="#the-form-element">form</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-form-element:represents">represents</a> a collection of <a href="#form-associated-element" id="the-form-element:form-associated-element">form-associated elements</a>, some of which can represent
+  <p class="represents">The <code id="the-form-element:the-form-element-2"><a href="#the-form-element">form</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-form-element:represents">represents</a> a collection of <a href="#form-associated-element" id="the-form-element:form-associated-element">form-associated elements</a>, some of which can represent
   editable values that can be submitted to a server for processing.</p>
 
   <p>The <dfn id="attr-form-accept-charset"><code>accept-charset</code></dfn> attribute gives the
@@ -23467,7 +23466,7 @@ interface <dfn id="htmlformelement">HTMLFormElement</dfn> : <a href="http://www.
 };</pre>
    </dd></dl>
 </details>
-  <p>The <code id="the-label-element:the-label-element-2"><a href="#the-label-element">label</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-label-element:represents">represents</a> a caption in a user interface. The
+  <p class="represents">The <code id="the-label-element:the-label-element-2"><a href="#the-label-element">label</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-label-element:represents">represents</a> a caption in a user interface. The
   caption can be associated with a specific form control, known as the
   <code id="the-label-element:the-label-element-3"><a href="#the-label-element">label</a></code> element's <dfn id="labeled-control">labeled control</dfn>, either using the <code id="the-label-element:attr-label-for-2"><a href="#attr-label-for">for</a></code> attribute, or by putting the form control inside the
   <code id="the-label-element:the-label-element-4"><a href="#the-label-element">label</a></code> element itself.</p>
@@ -23663,7 +23662,7 @@ interface <dfn id="htmlformelement">HTMLFormElement</dfn> : <a href="http://www.
 };</pre>
    </dd></dl>
 </details>
-  <p>The <code id="the-input-element:the-input-element"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-input-element:represents">represents</a> a typed data field, usually with a form
+  <p class="represents">The <code id="the-input-element:the-input-element"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-input-element:represents">represents</a> a typed data field, usually with a form
   control to allow the user to edit the data.</p>
 
   <p>The <dfn id="attr-input-type"><code>type</code></dfn> attribute controls the data type (and
@@ -25045,7 +25044,7 @@ interface <dfn id="htmlformelement">HTMLFormElement</dfn> : <a href="http://www.
 
   
 
-  <p>The <code id="hidden-state-(type=hidden):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="hidden-state-(type=hidden):represents">represents</a> a value that is not intended to be
+  <p class="represents">The <code id="hidden-state-(type=hidden):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="hidden-state-(type=hidden):represents">represents</a> a value that is not intended to be
   examined or manipulated by the user.</p>
 
   
@@ -25131,7 +25130,7 @@ interface <dfn id="htmlformelement">HTMLFormElement</dfn> : <a href="http://www.
 
   
 
-  <p>The <code id="text-(type=text)-state-and-search-state-(type=search):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="text-(type=text)-state-and-search-state-(type=search):represents">represents</a> a one line plain text edit control for
+  <p class="represents">The <code id="text-(type=text)-state-and-search-state-(type=search):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="text-(type=text)-state-and-search-state-(type=search):represents">represents</a> a one line plain text edit control for
   the element's <a href="#concept-fe-value" id="text-(type=text)-state-and-search-state-(type=search):concept-fe-value">value</a>.</p>
 
   <p class="note">The difference between the <a href="#text-(type=text)-state-and-search-state-(type=search)" id="text-(type=text)-state-and-search-state-(type=search):text-(type=text)-state-and-search-state-(type=search)-3">Text</a> state
@@ -25238,7 +25237,7 @@ interface <dfn id="htmlformelement">HTMLFormElement</dfn> : <a href="http://www.
 
   
 
-  <p>The <code id="telephone-state-(type=tel):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="telephone-state-(type=tel):represents">represents</a> a control for editing a telephone number
+  <p class="represents">The <code id="telephone-state-(type=tel):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="telephone-state-(type=tel):represents">represents</a> a control for editing a telephone number
   given in the element's <a href="#concept-fe-value" id="telephone-state-(type=tel):concept-fe-value">value</a>.</p>
 
   
@@ -25337,7 +25336,7 @@ interface <dfn id="htmlformelement">HTMLFormElement</dfn> : <a href="http://www.
 
   
 
-  <p>The <code id="url-state-(type=url):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="url-state-(type=url):represents">represents</a> a control for editing a single
+  <p class="represents">The <code id="url-state-(type=url):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="url-state-(type=url):represents">represents</a> a control for editing a single
   <a href="http://www.w3.org/TR/html51/infrastructure.html#absolute-url" id="url-state-(type=url):absolute-url">absolute URL</a> given in the element's <a href="#concept-fe-value" id="url-state-(type=url):concept-fe-value">value</a>.</p>
 
   
@@ -25479,7 +25478,7 @@ interface <dfn id="htmlformelement">HTMLFormElement</dfn> : <a href="http://www.
   <dl class="switch"><dt>When the <code id="e-mail-state-(type=email):attr-input-multiple-2"><a href="#attr-input-multiple">multiple</a></code> attribute is not specified on the
    element</dt><dd>
 
-    <p>The <code id="e-mail-state-(type=email):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="e-mail-state-(type=email):represents">represents</a> a control for editing an e-mail
+    <p class="represents">The <code id="e-mail-state-(type=email):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="e-mail-state-(type=email):represents">represents</a> a control for editing an e-mail
     address given in the element's <a href="#concept-fe-value" id="e-mail-state-(type=email):concept-fe-value">value</a>.</p>
 
     
@@ -25766,7 +25765,7 @@ ldh-str       = &lt; as defined in <a href="http://tools.ietf.org/html/rfc1034#s
 
   
 
-  <p>The <code id="date-and-time-state-(type=datetime):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="date-and-time-state-(type=datetime):represents">represents</a> a control for setting the element's
+  <p class="represents">The <code id="date-and-time-state-(type=datetime):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="date-and-time-state-(type=datetime):represents">represents</a> a control for setting the element's
   <a href="#concept-fe-value" id="date-and-time-state-(type=datetime):concept-fe-value">value</a> to a string representing a specific <a href="http://www.w3.org/TR/html51/infrastructure.html#concept-datetime" id="date-and-time-state-(type=datetime):concept-datetime">global date and time</a>. User agents may display
   the date and time in whatever time zone is appropriate for the user.</p>
 
@@ -26093,7 +26092,7 @@ ldh-str       = &lt; as defined in <a href="http://tools.ietf.org/html/rfc1034#s
 
   
 
-  <p>The <code id="month-state-(type=month):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="month-state-(type=month):represents">represents</a> a control for setting the element's
+  <p class="represents">The <code id="month-state-(type=month):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="month-state-(type=month):represents">represents</a> a control for setting the element's
   <a href="#concept-fe-value" id="month-state-(type=month):concept-fe-value">value</a> to a string representing a specific <a href="http://www.w3.org/TR/html51/infrastructure.html#concept-month" id="month-state-(type=month):concept-month">month</a>.</p>
 
   
@@ -26372,7 +26371,7 @@ ldh-str       = &lt; as defined in <a href="http://tools.ietf.org/html/rfc1034#s
 
   
 
-  <p>The <code id="time-state-(type=time):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="time-state-(type=time):represents">represents</a> a control for setting the element's
+  <p class="represents">The <code id="time-state-(type=time):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="time-state-(type=time):represents">represents</a> a control for setting the element's
   <a href="#concept-fe-value" id="time-state-(type=time):concept-fe-value">value</a> to a string representing a specific <a href="http://www.w3.org/TR/html51/infrastructure.html#concept-time" id="time-state-(type=time):concept-time">time</a>.</p>
 
   
@@ -26513,12 +26512,12 @@ ldh-str       = &lt; as defined in <a href="http://tools.ietf.org/html/rfc1034#s
 
   
 
-  <p>The <code id="number-state-(type=number):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="number-state-(type=number):represents">represents</a> a control for setting the element's
+  <p class="represents">The <code id="number-state-(type=number):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="number-state-(type=number):represents">represents</a> a control for setting the element's
   <a href="#concept-fe-value" id="number-state-(type=number):concept-fe-value">value</a> to a string representing a number.</p>
 
   
 
-  <p>If the element is <i id="number-state-(type=number):concept-fe-mutable"><a href="#concept-fe-mutable">mutable</a></i>, the user agent should allow the
+  <p class="represents">If the element is <i id="number-state-(type=number):concept-fe-mutable"><a href="#concept-fe-mutable">mutable</a></i>, the user agent should allow the
   user to change the number represented by its <a href="#concept-fe-value" id="number-state-(type=number):concept-fe-value-2">value</a>, as
   obtained from applying the <a href="http://www.w3.org/TR/html51/infrastructure.html#rules-for-parsing-floating-point-number-values" id="number-state-(type=number):rules-for-parsing-floating-point-number-values">rules for parsing floating-point number values</a> to it. User
   agents must not allow the user to set the <a href="#concept-fe-value" id="number-state-(type=number):concept-fe-value-3">value</a> to a
@@ -26679,7 +26678,7 @@ ldh-str       = &lt; as defined in <a href="http://tools.ietf.org/html/rfc1034#s
   <dl class="switch"><dt>When the <code id="range-state-(type=range):attr-input-multiple-2"><a href="#attr-input-multiple">multiple</a></code> attribute is not specified on the
    element</dt><dd>
 
-    <p>The <code id="range-state-(type=range):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="range-state-(type=range):represents">represents</a> a control for setting the element's
+    <p class="represents">The <code id="range-state-(type=range):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="range-state-(type=range):represents">represents</a> a control for setting the element's
     <a href="#concept-fe-value" id="range-state-(type=range):concept-fe-value">value</a> to a string representing a number, but with the
     caveat that the exact value is not important, letting UAs provide a simpler interface than they
     do for the <a href="#number-state-(type=number)" id="range-state-(type=range):number-state-(type=number)">Number</a> state.</p>
@@ -26810,7 +26809,7 @@ ldh-str       = &lt; as defined in <a href="http://tools.ietf.org/html/rfc1034#s
    </dd><dt>When the <code id="range-state-(type=range):attr-input-multiple-3"><a href="#attr-input-multiple">multiple</a></code> attribute <em>is</em> specified on
    the element</dt><dd>
 
-    <p>The <code id="range-state-(type=range):the-input-element-3"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="range-state-(type=range):represents-2">represents</a> a control for setting the element's
+    <p class="represents">The <code id="range-state-(type=range):the-input-element-3"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="range-state-(type=range):represents-2">represents</a> a control for setting the element's
     <a href="#concept-fe-values" id="range-state-(type=range):concept-fe-values">value<em>s</em></a> to two strings representing numbers, but
     with the caveat that the exact values are not important, enabling UAs provide a graphical
     interface rather than requiring the user to type the numbers directly.</p>
@@ -27022,7 +27021,7 @@ ldh-str       = &lt; as defined in <a href="http://tools.ietf.org/html/rfc1034#s
 
   
 
-  <p>The <code id="color-state-(type=color):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="color-state-(type=color):represents">represents</a> a colour well control, for setting the
+  <p class="represents">The <code id="color-state-(type=color):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="color-state-(type=color):represents">represents</a> a colour well control, for setting the
   element's <a href="#concept-fe-value" id="color-state-(type=color):concept-fe-value">value</a> to a string representing a <a href="http://www.w3.org/TR/html51/infrastructure.html#simple-colour" id="color-state-(type=color):simple-colour">simple
   colour</a>.</p>
 
@@ -27126,7 +27125,7 @@ ldh-str       = &lt; as defined in <a href="http://tools.ietf.org/html/rfc1034#s
 
   
 
-  <p>The <code id="checkbox-state-(type=checkbox):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="checkbox-state-(type=checkbox):represents">represents</a> a two-state control that represents the
+  <p class="represents">The <code id="checkbox-state-(type=checkbox):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="checkbox-state-(type=checkbox):represents">represents</a> a two-state control that represents the
   element's <a href="#concept-fe-checked" id="checkbox-state-(type=checkbox):concept-fe-checked">checkedness</a> state. If the element's <a href="#concept-fe-checked" id="checkbox-state-(type=checkbox):concept-fe-checked-2">checkedness</a> state is true, the control represents a positive
   selection, and if it is false, a negative selection. If the element's <code id="checkbox-state-(type=checkbox):dom-input-indeterminate"><a href="#dom-input-indeterminate">indeterminate</a></code> IDL attribute is set to true, then the
   control's selection should be obscured as if the control was in a third, indeterminate, state.</p>
@@ -27230,7 +27229,7 @@ ldh-str       = &lt; as defined in <a href="http://tools.ietf.org/html/rfc1034#s
 
   
 
-  <p>The <code id="radio-button-state-(type=radio):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="radio-button-state-(type=radio):represents">represents</a> a control that, when used in conjunction
+  <p class="represents">The <code id="radio-button-state-(type=radio):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="radio-button-state-(type=radio):represents">represents</a> a control that, when used in conjunction
   with other <code id="radio-button-state-(type=radio):the-input-element-3"><a href="#the-input-element">input</a></code> elements, forms a <i id="radio-button-state-(type=radio):radio-button-group"><a href="#radio-button-group">radio button group</a></i> in which only one
   control can have its <a href="#concept-fe-checked" id="radio-button-state-(type=radio):concept-fe-checked">checkedness</a> state set to true. If
   the element's <a href="#concept-fe-checked" id="radio-button-state-(type=radio):concept-fe-checked-2">checkedness</a> state is true, the control
@@ -27358,7 +27357,7 @@ ldh-str       = &lt; as defined in <a href="http://tools.ietf.org/html/rfc1034#s
 
   
 
-  <p>The <code id="file-upload-state-(type=file):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="file-upload-state-(type=file):represents">represents</a> a list of <dfn id="concept-input-type-file-selected">selected files</dfn>, each file consisting of a file
+  <p class="represents">The <code id="file-upload-state-(type=file):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="file-upload-state-(type=file):represents">represents</a> a list of <dfn id="concept-input-type-file-selected">selected files</dfn>, each file consisting of a file
   name, a file type, and a file body (the contents of the file).</p>
 
   
@@ -27566,7 +27565,7 @@ ldh-str       = &lt; as defined in <a href="http://tools.ietf.org/html/rfc1034#s
 
   
 
-  <p>When an <code id="submit-button-state-(type=submit):the-input-element"><a href="#the-input-element">input</a></code> element's <code id="submit-button-state-(type=submit):attr-input-type"><a href="#attr-input-type">type</a></code> attribute is in
+  <p class="represents">When an <code id="submit-button-state-(type=submit):the-input-element"><a href="#the-input-element">input</a></code> element's <code id="submit-button-state-(type=submit):attr-input-type"><a href="#attr-input-type">type</a></code> attribute is in
   the <a href="#submit-button-state-(type=submit)" id="submit-button-state-(type=submit):submit-button-state-(type=submit)">Submit Button</a> state, the rules in this section
   apply.</p>
 
@@ -27672,7 +27671,7 @@ ldh-str       = &lt; as defined in <a href="http://tools.ietf.org/html/rfc1034#s
 
   
 
-  <p>The <code id="image-button-state-(type=image):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="image-button-state-(type=image):represents">represents</a> either an image from which a user can
+  <p class="represents">The <code id="image-button-state-(type=image):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="image-button-state-(type=image):represents">represents</a> either an image from which a user can
   select a coordinate and submit the form, or alternatively a button from which the user can submit
   the form. The element is a <a href="#concept-button" id="image-button-state-(type=image):concept-button">button</a>, specifically a <a href="#concept-submit-button" id="image-button-state-(type=image):concept-submit-button">submit button</a>.</p>
 
@@ -27895,7 +27894,7 @@ ldh-str       = &lt; as defined in <a href="http://tools.ietf.org/html/rfc1034#s
 
   
 
-  <p>The <code id="reset-button-state-(type=reset):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="reset-button-state-(type=reset):represents">represents</a> a button that, when activated, resets
+  <p class="represents">The <code id="reset-button-state-(type=reset):the-input-element-2"><a href="#the-input-element">input</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="reset-button-state-(type=reset):represents">represents</a> a button that, when activated, resets
   the form. If the element has a <code id="reset-button-state-(type=reset):attr-input-value"><a href="#attr-input-value">value</a></code>
   attribute, the button's label must be the value of that attribute; otherwise, it must be an
   implementation-defined string that means "Reset" or some such. The element is a <a href="#concept-button" id="reset-button-state-(type=reset):concept-button">button</a>.
@@ -29227,7 +29226,7 @@ You cannot submit this form when the field is incorrect.</samp></pre>
 };</pre>
    </dd></dl>
 </details>
-  <p>The <code id="the-button-element:the-button-element"><a href="#the-button-element">button</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-button-element:represents">represents</a> a button labeled by its contents.</p>
+  <p class="represents">The <code id="the-button-element:the-button-element"><a href="#the-button-element">button</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-button-element:represents">represents</a> a button labeled by its contents.</p>
 
   <p>The element is a <a href="#concept-button" id="the-button-element:concept-button">button</a>.</p>
 
@@ -29861,7 +29860,7 @@ You cannot submit this form when the field is incorrect.</samp></pre>
 };</pre>
    </dd></dl>
 </details>
-  <p>The <code id="the-optgroup-element:the-optgroup-element-4"><a href="#the-optgroup-element">optgroup</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-optgroup-element:represents">represents</a> a group of <code id="the-optgroup-element:the-option-element-2"><a href="#the-option-element">option</a></code>
+  <p class="represents">The <code id="the-optgroup-element:the-optgroup-element-4"><a href="#the-optgroup-element">optgroup</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-optgroup-element:represents">represents</a> a group of <code id="the-optgroup-element:the-option-element-2"><a href="#the-option-element">option</a></code>
   elements with a common label.</p>
 
   <p>The element's group of <code id="the-optgroup-element:the-option-element-3"><a href="#the-option-element">option</a></code> elements consists of the <code id="the-optgroup-element:the-option-element-4"><a href="#the-option-element">option</a></code>
@@ -29950,7 +29949,7 @@ interface <dfn id="htmloptionelement">HTMLOptionElement</dfn> : <a href="http://
 };</pre>
    </dd></dl>
 </details>
-  <p>The <code id="the-option-element:the-option-element-4"><a href="#the-option-element">option</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-option-element:represents">represents</a> an option in a <code id="the-option-element:the-select-element-2"><a href="#the-select-element">select</a></code>
+  <p class="represents">The <code id="the-option-element:the-option-element-4"><a href="#the-option-element">option</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-option-element:represents">represents</a> an option in a <code id="the-option-element:the-select-element-2"><a href="#the-select-element">select</a></code>
   element or as part of a list of suggestions in a <code id="the-option-element:the-datalist-element-2"><a href="#the-datalist-element">datalist</a></code> element.</p>
 
   <p>In certain circumstances described in the definition of the <code id="the-option-element:the-select-element-3"><a href="#the-select-element">select</a></code> element, an
@@ -30168,7 +30167,7 @@ interface <dfn id="htmloptionelement">HTMLOptionElement</dfn> : <a href="http://
 };</pre>
    </dd></dl>
 </details>
-  <p>The <code id="the-textarea-element:the-textarea-element"><a href="#the-textarea-element">textarea</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-textarea-element:represents">represents</a> a multiline plain text edit
+  <p class="represents">The <code id="the-textarea-element:the-textarea-element"><a href="#the-textarea-element">textarea</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-textarea-element:represents">represents</a> a multiline plain text edit
   control for the element's <dfn id="concept-textarea-raw-value">raw
   value</dfn>. The contents of the control represent the control's default value.</p>
 
@@ -30738,7 +30737,7 @@ Daddy"&gt;&lt;/textarea&gt;</pre>
 };</pre>
    </dd></dl>
 </details>
-  <p>The <code id="the-output-element:the-output-element"><a href="#the-output-element">output</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-output-element:represents">represents</a> the result of a calculation performed
+  <p class="represents">The <code id="the-output-element:the-output-element"><a href="#the-output-element">output</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-output-element:represents">represents</a> the result of a calculation performed
   by the application, or the result of a user action.</p>
 
   <p class="note">This element can be contrasted with the <code id="the-output-element:the-samp-element"><a href="#the-samp-element">samp</a></code> element, which is the
@@ -30866,7 +30865,7 @@ Daddy"&gt;&lt;/textarea&gt;</pre>
 };</pre>
    </dd></dl>
 </details>
-  <p>The <code id="the-progress-element:the-progress-element-2"><a href="#the-progress-element">progress</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-progress-element:represents">represents</a> the completion progress of a task.
+  <p class="represents">The <code id="the-progress-element:the-progress-element-2"><a href="#the-progress-element">progress</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-progress-element:represents">represents</a> the completion progress of a task.
   The progress is either indeterminate, indicating that progress is being made but that it is not
   clear how much more work remains to be done before the task is complete (e.g. because the task is
   waiting for a remote host to respond), or the progress is a number in the range zero to a maximum,
@@ -31318,7 +31317,7 @@ out of 233 257 824 bytes available&lt;/meter&gt;&lt;/p&gt;</pre>
 };</pre>
    </dd></dl>
 </details>
-  <p>The <code id="the-fieldset-element:the-fieldset-element"><a href="#the-fieldset-element">fieldset</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-fieldset-element:represents">represents</a> a set of form controls optionally
+  <p class="represents">The <code id="the-fieldset-element:the-fieldset-element"><a href="#the-fieldset-element">fieldset</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-fieldset-element:represents">represents</a> a set of form controls optionally
   grouped under a common name.</p>
 
   <p>The name of the group is given by the first <code id="the-fieldset-element:the-legend-element-2"><a href="#the-legend-element">legend</a></code> element that is a child of the
@@ -31454,7 +31453,7 @@ out of 233 257 824 bytes available&lt;/meter&gt;&lt;/p&gt;</pre>
 };</pre>
    </dd></dl>
 </details>
-  <p>The <code id="the-legend-element:the-legend-element"><a href="#the-legend-element">legend</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-legend-element:represents">represents</a> a caption for the rest of the contents
+  <p class="represents">The <code id="the-legend-element:the-legend-element"><a href="#the-legend-element">legend</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-legend-element:represents">represents</a> a caption for the rest of the contents
   of the <code id="the-legend-element:the-legend-element-2"><a href="#the-legend-element">legend</a></code> element's parent <code id="the-legend-element:the-fieldset-element-2"><a href="#the-fieldset-element">fieldset</a></code> element, if
   any.</p>
 
@@ -34885,7 +34884,7 @@ fur
 };</pre>
    </dd></dl></details>
 
-  <p>The <code id="the-details-element:the-details-element"><a href="#the-details-element">details</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-details-element:represents">represents</a> a disclosure widget from which the
+  <p class="represents">The <code id="the-details-element:the-details-element"><a href="#the-details-element">details</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-details-element:represents">represents</a> a disclosure widget from which the
   user can obtain additional information or controls.</p>
 
   <p class="note">The <code id="the-details-element:the-details-element-2"><a href="#the-details-element">details</a></code> element is not appropriate for footnotes. Please see <a href="#footnotes">the section on footnotes</a> for details on how to mark up footnotes.</p>
@@ -37355,7 +37354,7 @@ not-slash     = %x0000-002E / %x0030-10FFFF
 
   <details><summary><code>noscript</code> element - quick reference</summary><dl class="element"><dt><a href="http://www.w3.org/TR/html51/dom.html#concept-element-categories" id="the-noscript-element:concept-element-categories">Categories</a>:</dt><dd><a href="http://www.w3.org/TR/html51/dom.html#metadata-content-2" id="the-noscript-element:metadata-content-2">Metadata content</a>.</dd><dd><a href="http://www.w3.org/TR/html51/dom.html#flow-content-2" id="the-noscript-element:flow-content-2">Flow content</a>.</dd><dd><a href="http://www.w3.org/TR/html51/dom.html#phrasing-content-2" id="the-noscript-element:phrasing-content-2">Phrasing content</a>.</dd><dt><a href="http://www.w3.org/TR/html51/dom.html#concept-element-contexts" id="the-noscript-element:concept-element-contexts">Contexts in which this element can be used</a>:</dt><dd>In a <code id="the-noscript-element:the-head-element"><a href="#the-head-element">head</a></code> element of an <a href="http://www.w3.org/TR/html51/infrastructure.html#html-documents" id="the-noscript-element:html-documents">HTML document</a>, if there are no ancestor <code id="the-noscript-element:the-noscript-element"><a href="#the-noscript-element">noscript</a></code> elements.</dd><dd>Where <a href="http://www.w3.org/TR/html51/dom.html#phrasing-content-2" id="the-noscript-element:phrasing-content-2-2">phrasing content</a> is expected in <a href="http://www.w3.org/TR/html51/infrastructure.html#html-documents" id="the-noscript-element:html-documents-2">HTML documents</a>, if there are no ancestor <code id="the-noscript-element:the-noscript-element-2"><a href="#the-noscript-element">noscript</a></code> elements.</dd><dt><a href="http://www.w3.org/TR/html51/dom.html#concept-element-content-model" id="the-noscript-element:concept-element-content-model">Content model</a>:</dt><dd>When <a href="webappapis.html#concept-n-noscript" id="the-noscript-element:concept-n-noscript">scripting is disabled</a>, in a <code id="the-noscript-element:the-head-element-2"><a href="#the-head-element">head</a></code> element: in any order, zero or more <code id="the-noscript-element:the-link-element"><a href="#the-link-element">link</a></code> elements, zero or more <code id="the-noscript-element:the-style-element"><a href="#the-style-element">style</a></code> elements, and zero or more <code id="the-noscript-element:the-meta-element"><a href="#the-meta-element">meta</a></code> elements.</dd><dd>When <a href="webappapis.html#concept-n-noscript" id="the-noscript-element:concept-n-noscript-2">scripting is disabled</a>, not in a <code id="the-noscript-element:the-head-element-3"><a href="#the-head-element">head</a></code> element: <a href="http://www.w3.org/TR/html51/dom.html#transparent" id="the-noscript-element:transparent">transparent</a>, but there must be no <code id="the-noscript-element:the-noscript-element-3"><a href="#the-noscript-element">noscript</a></code> element descendants.</dd><dd>Otherwise: text that conforms to the requirements given in the prose.</dd><dt><a href="http://www.w3.org/TR/html51/dom.html#concept-element-tag-omission" id="the-noscript-element:concept-element-tag-omission">Tag omission in text/html</a>:</dt><dd>Neither tag is omissible.</dd><dt><a href="http://www.w3.org/TR/html51/dom.html#concept-element-attributes" id="the-noscript-element:concept-element-attributes">Content attributes</a>:</dt><dd><a href="http://www.w3.org/TR/html51/dom.html#global-attributes" id="the-noscript-element:global-attributes">Global attributes</a></dd><dt>Allowed <a href="http://www.w3.org/TR/html51/dom.html#aria-role-attribute">ARIA role attribute</a> values:</dt><dd>None</dd><dt>Allowed <a href="http://www.w3.org/TR/html51/dom.html#state-and-property-attributes">ARIA State and Property Attributes</a>:</dt><dd><a href="http://www.w3.org/TR/html51/dom.html#index-aria-global">Global aria-* attributes</a></dd><dt><a href="http://www.w3.org/TR/html51/dom.html#concept-element-dom" id="the-noscript-element:concept-element-dom">DOM interface</a>:</dt><dd>Uses <code id="the-noscript-element:htmlelement"><a href="http://www.w3.org/TR/html51/dom.html#htmlelement">HTMLElement</a></code>.</dd></dl>
 </details>
-  <p>The <code id="the-noscript-element:the-noscript-element-4"><a href="#the-noscript-element">noscript</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-noscript-element:represents">represents</a> nothing if <a href="webappapis.html#concept-n-script" id="the-noscript-element:concept-n-script">scripting is enabled</a>, and <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-noscript-element:represents-2">represents</a> its children if
+  <p class="represents">The <code id="the-noscript-element:the-noscript-element-4"><a href="#the-noscript-element">noscript</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-noscript-element:represents">represents</a> nothing if <a href="webappapis.html#concept-n-script" id="the-noscript-element:concept-n-script">scripting is enabled</a>, and <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-noscript-element:represents-2">represents</a> its children if
   <a href="webappapis.html#concept-n-noscript" id="the-noscript-element:concept-n-noscript-3">scripting is disabled</a>. It is used to present different
   markup to user agents that support scripting and those that don't support scripting, by affecting
   how the document is parsed.</p>
@@ -37690,13 +37689,13 @@ interface <dfn id="htmlcanvaselement">HTMLCanvasElement</dfn> : <a href="http://
   <a href="http://www.w3.org/TR/html51/dom.html#embedded-content-category" id="the-canvas-element:embedded-content-category-4">embedded content</a> with the element's current bitmap and size. Otherwise, the element
   represents its <a href="http://www.w3.org/TR/html51/dom.html#fallback-content" id="the-canvas-element:fallback-content-2">fallback content</a> instead.</p>
 
-  <p>In non-visual media, and in visual media if <a href="webappapis.html#concept-n-noscript" id="the-canvas-element:concept-n-noscript">scripting is
+  <p class="represents">In non-visual media, and in visual media if <a href="webappapis.html#concept-n-noscript" id="the-canvas-element:concept-n-noscript">scripting is
   disabled</a> for the <code id="the-canvas-element:the-canvas-element-13"><a href="#the-canvas-element">canvas</a></code> element or if support for <code id="the-canvas-element:the-canvas-element-14"><a href="#the-canvas-element">canvas</a></code> elements
   has been disabled, the <code id="the-canvas-element:the-canvas-element-15"><a href="#the-canvas-element">canvas</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-canvas-element:represents-3">represents</a> its <a href="http://www.w3.org/TR/html51/dom.html#fallback-content" id="the-canvas-element:fallback-content-3">fallback
   content</a> instead.</p>
 
   
-  <p>When a <code id="the-canvas-element:the-canvas-element-16"><a href="#the-canvas-element">canvas</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-canvas-element:represents-4">represents</a> <a href="http://www.w3.org/TR/html51/dom.html#embedded-content-category" id="the-canvas-element:embedded-content-category-5">embedded content</a>, the
+  <p class="represents">When a <code id="the-canvas-element:the-canvas-element-16"><a href="#the-canvas-element">canvas</a></code> element <a href="http://www.w3.org/TR/html51/dom.html#represents" id="the-canvas-element:represents-4">represents</a> <a href="http://www.w3.org/TR/html51/dom.html#embedded-content-category" id="the-canvas-element:embedded-content-category-5">embedded content</a>, the
   user can still focus descendants of the <code id="the-canvas-element:the-canvas-element-17"><a href="#the-canvas-element">canvas</a></code> element (in the <a href="http://www.w3.org/TR/html51/dom.html#fallback-content" id="the-canvas-element:fallback-content-4">fallback
   content</a>). When an element is <a href="editing.html#focused" id="the-canvas-element:focused">focused</a>, it is the target of keyboard interaction
   events (even though the element itself is not visible). This allows web developers to make an interactive
